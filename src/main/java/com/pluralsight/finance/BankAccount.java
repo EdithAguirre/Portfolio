@@ -1,6 +1,8 @@
 package com.pluralsight.finance;
 
-public class BankAccount implements Valuable{
+import com.pluralsight.Valuable;
+
+public class BankAccount implements Valuable {
     // Data fields
     private String name, accountNumber;
     private double balance;
@@ -14,14 +16,15 @@ public class BankAccount implements Valuable{
 
     // Methods
     public void deposit(double amount){
+        this.balance += amount;
     }
 
     public void withdraw(double amount){
+        this.balance -= amount;
     }
 
     @Override
     public double getValue() {
-        return 0;
+        return this.balance;
     }
-
 }

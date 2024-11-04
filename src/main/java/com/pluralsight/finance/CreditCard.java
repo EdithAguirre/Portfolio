@@ -1,12 +1,13 @@
 package com.pluralsight.finance;
 
-public class CreditCard implements Valuable{
+import com.pluralsight.Valuable;
+
+public class CreditCard implements Valuable {
     // Data fields
     private String name, accountNumber;
     private double balance;
 
     // Constructor
-
     public CreditCard(String name, String accountNumber, double balance) {
         this.name = name;
         this.accountNumber = accountNumber;
@@ -18,6 +19,7 @@ public class CreditCard implements Valuable{
     }
 
     public void pay(double amount){
+        this.balance -= amount;
     }
 
     @Override
